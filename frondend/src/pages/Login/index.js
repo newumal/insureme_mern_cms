@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from "react-toastify";
 import { login, reset} from "../../features/authSlice";
 import Spinner from "../../components/Spinner";
+import {Card} from "antd";
+import LoginForm from "../../components/LoginForm";
 
 const Login = () => {
     const [name, setName] = useState("")
@@ -46,37 +48,44 @@ const Login = () => {
     }
 
     return(
-        <div className={styles.login_container}>
-            <form
-                className={styles.login_form}
-                onSubmit={(e) => onHandleFormSubmit(e)}
-            >
-                <h1>
-                    <FaSignInAlt/> Login Here
-                </h1>
-                <input
-                    type="email"
-                    placeholder="Email"
-                    value={email}
-                    onChange={(e)=> setEmail(e.target.value)}
-                />
-                <input
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-                <button
-                    className={styles.login_button}
-                    type="submit"
-                    name="'LOGIN"
-                >Login</button>
-                <div className={styles.register_button}>
-                    <h3>Need an account ?<span><a onClick={onClickRegister} className={{}}>Register</a></span></h3>
-                </div>
+        <LoginForm />
 
-            </form>
-        </div>
+
+        // <div className={styles.login_container}>
+        //     <Card
+        //         hoverable
+        //     >
+        //         <form
+        //             className={styles.login_form}
+        //             onSubmit={(e) => onHandleFormSubmit(e)}
+        //         >
+        //             <h1>
+        //                 <FaSignInAlt/> LoginForm Here
+        //             </h1>
+        //             <input
+        //                 type="email"
+        //                 placeholder="Email"
+        //                 value={email}
+        //                 onChange={(e)=> setEmail(e.target.value)}
+        //             />
+        //             <input
+        //                 type="password"
+        //                 placeholder="Password"
+        //                 value={password}
+        //                 onChange={(e) => setPassword(e.target.value)}
+        //             />
+        //             <button
+        //                 className={styles.login_button}
+        //                 type="submit"
+        //                 name="'LOGIN"
+        //             >LoginForm</button>
+        //             <div className={styles.register_button}>
+        //                 <h3>Need an account ?<span><a onClick={onClickRegister} className={{}}>Register</a></span></h3>
+        //             </div>
+        //
+        //         </form>
+        //     </Card>
+        // </div>
     )
 }
 export default Login

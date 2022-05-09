@@ -16,7 +16,7 @@ export const logout = async () => {
     localStorage.removeItem('user')
 }
 
-// Login user
+// LoginForm user
 const login = async (userData) => {
     const response = await axios.post(API_URL + '/login', userData)
 

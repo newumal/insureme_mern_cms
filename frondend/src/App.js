@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import 'antd/dist/antd.css';
+import { Button } from 'antd';
 
 function App() {
   return (
